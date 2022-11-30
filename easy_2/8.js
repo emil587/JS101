@@ -1,12 +1,9 @@
 function oddities(array) {
   let odd = [];
-  let counter = 0;
-  for (let entry of array) {
-    if (counter === 0 || counter % 2 === 0) {
-      odd.push(array[entry]);
-      debugger
+  for (let counter = 0; counter < array.length; counter++) {
+    if (counter % 2 === 0) {
+      odd.push(array[counter]);
     }
-    counter += 1;
   }
   return odd;
 }
