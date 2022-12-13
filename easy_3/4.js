@@ -19,6 +19,6 @@ findFibonacciIndexByLength(10n) === 45n;
 findFibonacciIndexByLength(16n) === 74n;
 findFibonacciIndexByLength(100n) === 476n;
 findFibonacciIndexByLength(1000n) === 4782n;
-//findFibonacciIndexByLength(10000n) === 47847n;
+findFibonacciIndexByLength(10000n) === 47847n;
 
 // The last example may take a minute or so to run.
