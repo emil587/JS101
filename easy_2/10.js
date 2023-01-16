@@ -1,44 +1,11 @@
-function stringToInteger(string) {
-  let numeric = []
-  let translate = {'1':1,
-                  '2':2,
-                  '3':3,
-                  '4':4,
-                  '5':5,
-                  '6':6,
-                  '7':7,
-                  '8':8,
-                  '9':9,
-                  '0':0}
-  for (let entry of string.split('')) {
-    numeric.push(translate[entry])
-  }
-  numeric = numeric.reverse()
-  let sum = 0;
-  for (let counter = 0; counter < numeric.length; counter++) {
-    sum += numeric[counter] * 10 ** counter;
-  }
+let readline = require('readline-sync');
 
-  console.log(sum)
-  return sum
+let currentAge = readline.question('What is your age?  ');
+let retireAge = readline.question('What age will you retire?  ');
 
-}
+let delta = retireAge - currentAge;
+let currentYear = 2023;
+let retireYear = currentYear + delta;
 
-function stringToSignedInteger(string) {
-  let negative = false;
-  if (string.startsWith('-')) {
-    negative = true;
-    string = string.slice(1);
-  }
-  if (string.startsWith('+')) {
-    string = string.slice(1);
-  }
-  let sum = stringToInteger(string);
-  if (negative) {sum = sum * -1};
-  return sum;
-}
-
-
-console.log(stringToSignedInteger("4321") === 4321); // logs true
-console.log(stringToSignedInteger("-570") === -570); // logs true
-console.log(stringToSignedInteger("+100") === 100); // logs true
+console.log(`You will retire in ${retireYear}`)
+console.log(`You will work for ${delta} more years`)

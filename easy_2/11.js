@@ -1,21 +1,17 @@
-let converter = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+function centerOf(string) {
+  let length = string.length;
+  let center = length / 2
+  if (length % 2 === 0) {
+    console.log(string.slice(center -1, center + 1));
 
-function integerToString(int) {
-  let string = '';
-  do {
-    let digit = int % 10;
-    //console.log(digit)
-    digit = converter[digit];
-    string = digit + string;
-    int = Math.floor(int / 10);
+  } else {
+    console.log(string.slice(Math.floor(center), Math.floor(center) + 1))
     
-  } while (int > 0)
-  console.log(string);
-  return string;
-  
+  }
 }
 
-integerToString(4321);        // "4321"
-integerToString(0);           // "0"
-integerToString(5000);        // "5000"
-integerToString(1234567890);  // "1234567890"
+centerOf('I Love JavaScript'); // "a"
+centerOf('Launch School');     // " "
+centerOf('Launch');            // "un"
+centerOf('Launchschool');      // "hs"
+centerOf('x');                 // "x"
